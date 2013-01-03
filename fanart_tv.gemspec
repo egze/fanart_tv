@@ -5,12 +5,12 @@
 
 Gem::Specification.new do |s|
   s.name = "fanart_tv"
-  s.version = "0.0.0"
+  s.version = "0.0.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Aleksandr Lossenko"]
   s.date = "2013-01-03"
-  s.description = "TODO: longer description of your gem"
+  s.description = "A ruby wrapper for fanart.tv API."
   s.email = "aleksandr.lossenko@gmail.com"
   s.extra_rdoc_files = [
     "LICENSE.txt",
@@ -18,43 +18,65 @@ Gem::Specification.new do |s|
   ]
   s.files = [
     ".document",
+    ".rvmrc",
     "Gemfile",
+    "Gemfile.lock",
     "LICENSE.txt",
     "README.rdoc",
     "Rakefile",
     "VERSION",
+    "fanart_tv.gemspec",
     "lib/fanart_tv.rb",
+    "lib/fanart_tv/bindings/artist.rb",
+    "lib/fanart_tv/client.rb",
+    "lib/fanart_tv/client_modules/transparent_proxy.rb",
+    "lib/fanart_tv/configuration.rb",
+    "lib/fanart_tv/models/album.rb",
+    "lib/fanart_tv/models/artist.rb",
+    "lib/fanart_tv/models/base_model.rb",
+    "lib/fanart_tv/models/photo.rb",
+    "lib/fanart_tv/version.rb",
+    "test/fixtures/artist.json",
     "test/helper.rb",
-    "test/test_fanart_tv.rb"
+    "test/test_artist.rb"
   ]
   s.homepage = "http://github.com/egze/fanart_tv"
   s.licenses = ["MIT"]
   s.require_paths = ["lib"]
   s.rubygems_version = "1.8.24"
-  s.summary = "TODO: one-line summary of your gem"
+  s.summary = "A ruby wrapper for fanart.tv API."
 
   if s.respond_to? :specification_version then
     s.specification_version = 3
 
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
-      s.add_runtime_dependency(%q<httparty>, [">= 0"])
+      s.add_runtime_dependency(%q<faraday>, [">= 0"])
+      s.add_runtime_dependency(%q<faraday_middleware>, [">= 0"])
+      s.add_runtime_dependency(%q<json>, [">= 0"])
       s.add_development_dependency(%q<minitest>, [">= 0"])
       s.add_development_dependency(%q<rdoc>, [">= 0"])
       s.add_development_dependency(%q<bundler>, [">= 0"])
       s.add_development_dependency(%q<jeweler>, [">= 0"])
+      s.add_development_dependency(%q<fakeweb>, [">= 0"])
     else
-      s.add_dependency(%q<httparty>, [">= 0"])
+      s.add_dependency(%q<faraday>, [">= 0"])
+      s.add_dependency(%q<faraday_middleware>, [">= 0"])
+      s.add_dependency(%q<json>, [">= 0"])
       s.add_dependency(%q<minitest>, [">= 0"])
       s.add_dependency(%q<rdoc>, [">= 0"])
       s.add_dependency(%q<bundler>, [">= 0"])
       s.add_dependency(%q<jeweler>, [">= 0"])
+      s.add_dependency(%q<fakeweb>, [">= 0"])
     end
   else
-    s.add_dependency(%q<httparty>, [">= 0"])
+    s.add_dependency(%q<faraday>, [">= 0"])
+    s.add_dependency(%q<faraday_middleware>, [">= 0"])
+    s.add_dependency(%q<json>, [">= 0"])
     s.add_dependency(%q<minitest>, [">= 0"])
     s.add_dependency(%q<rdoc>, [">= 0"])
     s.add_dependency(%q<bundler>, [">= 0"])
     s.add_dependency(%q<jeweler>, [">= 0"])
+    s.add_dependency(%q<fakeweb>, [">= 0"])
   end
 end
 
