@@ -1,5 +1,7 @@
 = fanart_tv
 
+{<img src="https://travis-ci.org/egze/fanart_tv.png?branch=master" alt="Build Status" />}[https://travis-ci.org/egze/fanart_tv]
+
 A ruby wrapper for fanart.tv API. http://fanart.tv
 
 == Installation
