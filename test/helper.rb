@@ -1,5 +1,6 @@
 require 'rubygems'
 require 'bundler'
+require 'fakeweb'
 begin
   Bundler.setup(:default, :development)
 rescue Bundler::BundlerError => e
@@ -12,6 +13,16 @@ require 'minitest/unit'
 $LOAD_PATH.unshift(File.dirname(__FILE__))
 $LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
 require 'fanart_tv'
+
+FanartTv.configure do |c|
+  c.app_name = "FanartTvGemTestSuite"
+  c.app_version = FanartTv::VERSION
+  c.contact = "https://github.com/egze/fanart_tv"
+  c.perform_caching = true
+  c.api_key = "dummy_api_key"
+end
+
+FakeWeb.allow_net_connect = false
 
 class MiniTest::Unit::TestCase
 end

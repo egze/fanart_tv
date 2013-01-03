@@ -1,6 +1,43 @@
 = fanart_tv
 
-Description goes here.
+A ruby wrapper for fanart.tv API. http://fanart.tv
+
+== Installation
+
+  gem install fanart_tv
+  
+or add this line to your Gemfile
+
+  gem "fanart_tv"
+
+== Configuration
+
+  FanartTv.configure do |c|
+    # Application identity (required)
+    c.app_name = "Your App Name"
+    c.app_version = "1.0"
+    c.contact = "Your email, or website"
+
+    # Cache config (optional)
+    c.cache_path = "/tmp/musicbrainz-cache"
+    c.perform_caching = true
+
+    c.api_key = "Your API key for fanart.tv"
+  end
+
+== Usage
+
+  require "fanart_tv"
+  
+  # Search for artist by musicbrainz_id
+  @evanescence = FanartTv::Artist.find("f4a31f0a-51dd-4fa7-986d-3095c40c5ed9")
+
+== Api
+
+=== FanartTv::Artist
+
+  @artist = FanartTv::Artist.find(musicbrainz_id)
+
 
 == Contributing to fanart_tv
  
@@ -11,9 +48,3 @@ Description goes here.
 * Commit and push until you are happy with your contribution.
 * Make sure to add tests for it. This is important so I don't break it in a future version unintentionally.
 * Please try not to mess with the Rakefile, version, or history. If you want to have your own version, or is otherwise necessary, that is fine, but please isolate to its own commit so I can cherry-pick around it.
-
-== Copyright
-
-Copyright (c) 2013 Aleksandr Lossenko. See LICENSE.txt for
-further details.
-
