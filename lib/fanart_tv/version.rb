@@ -1,5 +1,5 @@
 module FanartTv
   
-  VERSION = Gem::Specification::load("fanart_tv.gemspec").version.to_s
+  VERSION = File.read(File.dirname(__FILE__) + "/../../VERSION")
   
 end
